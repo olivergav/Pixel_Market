@@ -1,0 +1,41 @@
+.register {
+  max-width: 20rem;
+  width: 100%;
+  margin: auto;
+
+  &__box {
+    margin-bottom: 1rem;
+  }
+
+  .box {
+    &__lbl {
+      width: 100%;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.3);
+      outline: none;
+    }
+
+    &--inline {
+      display: flex;
+      justify-content: flex-start;
+      align-items: baseline;
+
+      label,
+      input {
+        width: auto;
+        padding: 0.25rem;
+      }
+    }
+  }
+
+  .required {
+    color: red;
+  }
+}

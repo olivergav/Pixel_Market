@@ -1,0 +1,32 @@
+{
+  "id": 2,
+  "name": "Windows 10",
+  "description": "Best OS ever",
+  "category": "Software",
+  "subcategory": "Operating systems",
+  "price": 1800,
+  "currency": "PLN",
+  "stock": 9999,
+  "images": ["windows.jpg"],
+  "opinions": [
+    {
+      "id": 1,
+      "stars": 5,
+      "content": "amazing",
+      "author": "Andrzej"
+    },
+    {
+      "id": 2,
+      "stars": 3,
+      "content": "nice",
+      "author": "Olivier"
+    }
+  ],
+  "comments": [
+    {
+      "id": 3,
+      "author": "Paweł",
+      "content": "I would recommend Mac OS"
+    }
+  ]
+}

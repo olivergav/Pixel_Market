@@ -1,0 +1,24 @@
+.progress-bar {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  height: 0.325rem;
+  position: absolute;
+  top: 0;
+  transition: all 400ms;
+
+  &[value] {
+  }
+
+  &:not([value]) {
+    // background-color: red;
+  }
+
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
+
+  &::-webkit-progress-value {
+    background: red;
+  }
+}

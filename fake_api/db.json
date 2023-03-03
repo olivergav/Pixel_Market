@@ -1,0 +1,243 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "AMD Ryzon 9700",
+      "description": "GPC",
+      "category": 1,
+      "subcategory": 1,
+      "price": 2800,
+      "currency": "PLN",
+      "stock": 5,
+      "images": [
+        "ryzen.jpeg"
+      ],
+      "opinions": [
+        1,
+        3
+      ],
+      "comments": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Windows 10",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        1,
+        2
+      ],
+      "comments": [
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "name": "RTX 3080 TI",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        2,
+        3
+      ],
+      "comments": []
+    },
+    {
+      "id": 4,
+      "name": "GTX 1060 Gaming X 6GB",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        1
+      ],
+      "comments": [
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Win 7",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        2
+      ],
+      "comments": [
+        2
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Windows XP",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        3
+      ],
+      "comments": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Windows 98",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [
+        1,
+        2,
+        3
+      ],
+      "comments": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 8,
+      "name": "SATA 100TB",
+      "description": "Best OS ever",
+      "category": 2,
+      "subcategory": 2,
+      "price": 1800,
+      "currency": "PLN",
+      "stock": 9999,
+      "images": [
+        "windows.jpg"
+      ],
+      "opinions": [],
+      "comments": [
+        1,
+        3
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hardware"
+    },
+    {
+      "id": 2,
+      "name": "Software"
+    },
+    {
+      "id": 3,
+      "name": "Accessories"
+    }
+  ],
+  "subcategories": [
+    {
+      "id": 1,
+      "category": 1,
+      "name": "Processors"
+    },
+    {
+      "id": 2,
+      "category": 2,
+      "name": "Operating systems"
+    },
+    {
+      "id": 3,
+      "category": 2,
+      "name": "Text editors"
+    }
+  ],
+  "opinions": [
+    {
+      "id": 1,
+      "stars": 5,
+      "content": "amazing",
+      "author": "Andrzej"
+    },
+    {
+      "id": 2,
+      "stars": 3,
+      "content": "nice",
+      "author": "Olivier"
+    },
+    {
+      "id": 3,
+      "stars": 4,
+      "content": "good price",
+      "author": "Paweł"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "author": "Andrzej",
+      "content": "Best product ever"
+    },
+    {
+      "id": 2,
+      "author": "Mirek",
+      "content": "Poor quality"
+    },
+    {
+      "id": 3,
+      "author": "Paweł",
+      "content": "I would recommend Mac OS"
+    }
+  ],
+  "users": [
+    {
+      "email": "testuser@test.com",
+      "password": "$2a$10$5YX/n7FLw4gZNSpsrSSE3evXnVwaVm.x9DlsCVcVqZxZ0NJ70hZkC",
+      "id": 1
+    }
+  ],
+  "refresh": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Inp4Y0B6eGMuY29tIiwiaWF0IjoxNjYxODc5OTQ2LCJleHAiOjE2NjE4ODM1NDYsInN1YiI6IjMifQ.Z00Ep3fSCalqsfREN4m3YipoHmtNw6-5v8jxS7sFQtI"
+  },
+  "logout": {
+    "value": true
+  }
+}
