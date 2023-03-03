@@ -1,15 +1,18 @@
-import useLogout from "../../hooks/useLogout";
+import useLogout from '../../hooks/useLogout'
 
-import "./LogOut.scss";
+import './LogOut.scss'
 
 function LogOut() {
-  const logout = useLogout();
+    const logout = useLogout()
 
-  return (
-    <button onClick={logout} className="navigation__item navigation__item--btn">
-      Logout
-    </button>
-  );
+    return (
+        <button
+            onClick={logout}
+            className="navigation__item navigation__item--btn"
+        >
+            Logout
+        </button>
+    )
 }
 
-export default LogOut;
+export default LogOut

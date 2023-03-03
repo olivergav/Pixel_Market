@@ -1,25 +1,25 @@
-import React, {useContext, useEffect} from "react";
-import {useNavigate, useLocation} from "react-router-dom";
-import {useFormik} from "formik";
+import React, { useContext, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useFormik } from 'formik'
 
-import AuthContext from "../../context/AuthProvider";
-import TitleChangeContext from "../../context/TItleChangeProvider";
-import useAuth from "../../hooks/useAuth";
-import axios from "../../api/axios";
-import "./Login.scss";
+import AuthContext from '../../context/AuthProvider'
+import TitleChangeContext from '../../context/TitleChangeProvider'
+import useAuth from '../../hooks/useAuth'
+import axios from '../../api/axios'
+import './Login.scss'
 
-const LOGIN_URL = "/login";
+const LOGIN_URL = '/login'
 
 export default function Login() {
-    const {setAuth} = useContext(AuthContext);
-    const {setTitle} = useContext(TitleChangeContext);
-    const navigate = useNavigate();
-    const location = useLocation();
-    const {auth} = useAuth();
+    const { setAuth } = useContext(AuthContext)
+    const { setTitle } = useContext(TitleChangeContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { auth } = useAuth()
 
     useEffect(() => {
         setTitle('Login')
-    }, []);
+    }, [])
 
     useEffect(() => {
         if (auth?.accessToken) {
@@ -27,34 +27,37 @@ export default function Login() {
         }
     }, [])
 
-    const from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || '/'
 
     const formik = useFormik({
         initialValues: {
-            email: "",
-            password: "",
+            email: '',
+            password: '',
             remember: false,
         },
         onSubmit: async (values) => {
             try {
-                const response = await axios.post(LOGIN_URL, JSON.stringify(values));
-                const accessToken = response?.data?.accessToken;
+                const response = await axios.post(
+                    LOGIN_URL,
+                    JSON.stringify(values)
+                )
+                const accessToken = response?.data?.accessToken
 
-                setAuth({accessToken});
-                navigate(from, {replace: true});
+                setAuth({ accessToken })
+                navigate(from, { replace: true })
             } catch (error) {
                 if (!error?.response) {
-                    console.error("No server response");
+                    console.error('No server response')
                 } else if (error.response?.status === 400) {
-                    console.error("Cannot find user");
+                    console.error('Cannot find user')
                 } else if (error.response?.status === 401) {
-                    console.error("Unauthorized");
+                    console.error('Unauthorized')
                 } else {
-                    console.error("Login failed");
+                    console.error('Login failed')
                 }
             }
         },
-    });
+    })
 
     return (
         <form className="login" onSubmit={formik.handleSubmit}>
@@ -106,5 +109,5 @@ export default function Login() {
                 Login
             </button>
         </form>
-    );
+    )
 }

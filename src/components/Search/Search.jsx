@@ -1,16 +1,16 @@
-import React, {useState} from "react";
+import React, { useState } from 'react'
 
-import reactStringReplace from "react-string-replace";
+import reactStringReplace from 'react-string-replace'
 
-import "./Search.scss";
+import './Search.scss'
 
-export default function Search({setSearch, search, products, searchFilter}) {
-    const [autocomplete, setAutocomplete] = useState(false);
+export default function Search({ setSearch, search, products, searchFilter }) {
+    const [autocomplete, setAutocomplete] = useState(false)
 
     function handleOnChange(e) {
-        setSearch(e.target.value);
+        setSearch(e.target.value)
 
-        e.target.value === "" ? setAutocomplete(false) : setAutocomplete(true);
+        e.target.value === '' ? setAutocomplete(false) : setAutocomplete(true)
     }
 
     return (
@@ -29,25 +29,28 @@ export default function Search({setSearch, search, products, searchFilter}) {
                     className="search__autocomplete autocomplete"
                     data-cy="autocomplete"
                 >
-                    {products.filter(searchFilter).map(({name, id}) => (
+                    {products.filter(searchFilter).map(({ name, id }) => (
                         <li
                             key={id}
                             onClick={() => {
-                                setSearch(name);
-                                setAutocomplete(false);
+                                setSearch(name)
+                                setAutocomplete(false)
                             }}
                             className="autocomplete__item"
                             data-cy="autocomplete-item"
                         >
                             {reactStringReplace(name, search, (match, i) => (
-                                <span key={i} className="autocomplete__highlight">
-                  {match}
-                </span>
+                                <span
+                                    key={i}
+                                    className="autocomplete__highlight"
+                                >
+                                    {match}
+                                </span>
                             ))}
                         </li>
                     ))}
                 </ul>
             )}
         </div>
-    );
+    )
 }

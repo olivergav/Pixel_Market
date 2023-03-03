@@ -1,1 +1,1 @@
-export const MEDIA_PATH = "/media";
+export const MEDIA_PATH = '/media'

@@ -1,14 +1,14 @@
-import {Link} from "react-router-dom";
-import {MEDIA_PATH} from "../../constants";
+import { Link } from 'react-router-dom'
+import { MEDIA_PATH } from '../../constants'
 
-function Product({id, images, name, description, price, currency}) {
+function Product({ id, images, name, description, price, currency, image }) {
     return (
-        <div key={id}
-             data-cy="product"
-             className="products__card card">
+        <div key={id} data-cy="product" className="products__card card">
             <div className="card__mask">
                 <img
-                    src={`${MEDIA_PATH}/${images[0]}`}
+                    //one of images list from api or faker image
+                    // src={`${MEDIA_PATH}/${images[0]}`}
+                    src={`${image}`}
                     alt={name}
                     className="card__image"
                 />
@@ -18,13 +18,14 @@ function Product({id, images, name, description, price, currency}) {
                 <p className="card__text">{description}</p>
                 <div className="card__footer">
                     <span className="card__price">
-                          {currency}
+                        {currency}
                         {price}
-                        </span>
+                    </span>
                     <Link
                         to={`/products/${id}`}
                         className="card__link"
-                        data-cy="detailsLink">
+                        data-cy="detailsLink"
+                    >
                         Details
                     </Link>
                 </div>
@@ -33,4 +34,4 @@ function Product({id, images, name, description, price, currency}) {
     )
 }
 
-export default Product;
+export default Product
