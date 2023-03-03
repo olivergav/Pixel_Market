@@ -1,5 +1,13 @@
+@import './src/styles/utils/media-queries';
+
 .filter {
   &__select {
     width: 10rem;
+  }
+}
+
+@include mq-max(lg) {
+  .filter {
+    margin-bottom: 16px;
   }
 }
