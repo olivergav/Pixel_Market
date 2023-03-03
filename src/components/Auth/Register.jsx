@@ -5,14 +5,22 @@ import {useFormik} from "formik";
 import {handleDataFromAPI} from "../../helpers/api";
 import TitleChangeContext from "../../context/TItleChangeProvider";
 import "./Register.scss";
+import useAuth from "../../hooks/useAuth";
 
 function Register() {
-    let navigate = useNavigate();
     const {setTitle} = useContext(TitleChangeContext);
+    let navigate = useNavigate();
+    const {auth} = useAuth();
 
     useEffect(() => {
         setTitle('Register');
     }, []);
+
+    useEffect(() => {
+        if (auth?.accessToken) {
+            navigate('/')
+        }
+    }, [])
 
     const validate = (values) => {
         const errors = {};

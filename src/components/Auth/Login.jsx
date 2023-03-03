@@ -4,6 +4,7 @@ import {useFormik} from "formik";
 
 import AuthContext from "../../context/AuthProvider";
 import TitleChangeContext from "../../context/TItleChangeProvider";
+import useAuth from "../../hooks/useAuth";
 import axios from "../../api/axios";
 import "./Login.scss";
 
@@ -11,13 +12,20 @@ const LOGIN_URL = "/login";
 
 export default function Login() {
     const {setAuth} = useContext(AuthContext);
+    const {setTitle} = useContext(TitleChangeContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const {setTitle} = useContext(TitleChangeContext);
+    const {auth} = useAuth();
 
     useEffect(() => {
-      setTitle('Login')
+        setTitle('Login')
     }, []);
+
+    useEffect(() => {
+        if (auth?.accessToken) {
+            navigate('/')
+        }
+    }, [])
 
     const from = location.state?.from?.pathname || "/";
 
